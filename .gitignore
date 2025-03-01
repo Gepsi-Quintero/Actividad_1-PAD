@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+self.ruta_static="src/pad_2025/static/"
 
 # Distribution / packaging
 .Python
