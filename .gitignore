@@ -5,8 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-src/pad_2025/static/txt/*,txt
-
+src/pad_2025/static/txt/*.txt
 # Distribution / packaging
 .Python
 build/

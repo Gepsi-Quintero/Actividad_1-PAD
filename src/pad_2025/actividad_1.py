@@ -47,21 +47,25 @@ class actividad_1():
     
     def  leer_api(self,url=""):
      # El metodo get() de la libreria requests, permite hacer una peticion a una API
-     response = requests. get("https://api.jikan.moe/v4/anime/989")
-     return response.json()
+        response = requests.get("https://api.jikan.moe/v4/anime/989")
+        return response.json()
         
     def  escribir_json(self, nombre, datos):
-        ruta_json = "{}json/{}.json".format(self.ruta_static, nombre)
-        with open(ruta_json, "w", encoding="utf-8") as f:
+        ruta_json = "{}/json/{}".format(self.ruta_static,nombre)
+        with open(ruta_json, 'w', encoding='utf-8') as f:
             json.dump(datos, f, ensure_ascii=False, indent=4)
     
-    def escribir_txt(self,nombre,datos):
-        # r read w write
-        ruta_txt = "{}.txt".format(nombre)
-        datos=""
-        with open(ruta_txt,"w",encoding="utf-8") as f:
-            #f.write(datos)
-            f.writelines(datos)
+     def escribir_txt(self,nombre_archivo="",datos=None): # "" '' """ """
+        if nombre_archivo=="":
+            nombre_archivo="datos.txt"
+        if datos is None:
+            datos = "No hay datos"
+        ruta_txt = "{}/txt/{}".format(self.ruta_static,nombre_archivo)
+        with open(ruta_txt, 'w', encoding='utf-8') as f:
+            json.dump(datos, f, ensure_ascii=False, indent=4)
+            f.write(str(datos))
+        return True # booleano True (1) False (0)
+
 
 
 
@@ -71,11 +75,11 @@ inges = actividad_1()
 # datos_json = actividad_1.leer_api("https://api.jikan.moe/v4/anime/989")
 #"https://api.jikan.moe/v4/anime/989"
 datos_json = inges.leer_api("https://api.jikan.moe/v4/anime/989")
-print("datos_json",datos_json)
+print("datos_json:",datos_json)
 #if inges.write_json (nombre_archivo="entrega_actividad_1.json" ,datos=datos_json) 
  # print("se ha cesrito el archivo json")
 inges.write_txt("actividad_1.txt",datos_json)
-inges.write_json("actividad_1.txt",datos_json)
+inges.write_json("actividad_1.json",datos_json)
 print("se ha escrito el archivo txt")
 
 
