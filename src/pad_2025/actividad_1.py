@@ -67,20 +67,17 @@ class actividad_1():
 
 
 
-
-
 inges = actividad_1() 
-# datos_json = actividad_1.leer_api(https://api.jikan.moe/v4/anime/989")
-print(datos_json)
-print("datos_json")
-print("************************************************************")
-datos_txt = inges.leer_txt()
-print(datos_txt)
-print("************************************************************")
-print("************************************************************")
-nombre_archivo = "info copy.txt"
-datos_txt_dos = inges.leer_varios_txt(nombre_archivo)
-print(datos_txt_dos)
+# datos_json = actividad_1.leer_api("https://api.jikan.moe/v4/anime/989")
+#"https://api.jikan.moe/v4/anime/989"
+datos_json = inges.leer_api("https://api.jikan.moe/v4/anime/989")
+print("datos_json", datos_json)
+#if inges.write_json (nombre_archivo="entrega_actividad_1.json" ,datos=datos_json) 
+ # print("se ha cesrito el archivo json")
+inges.write_txt("actividad_1.txt" , datos_json)
+inges.write_json("actividad_1.txt" , datos_json)
+print("se ha escrito el archivo txt")
+
 
 #inges.escribir_txt(nombre="archivo_json",datos=datos_json)
 #inges.escribir_txt(nombre="archivo_txt",datos=datos_txt)

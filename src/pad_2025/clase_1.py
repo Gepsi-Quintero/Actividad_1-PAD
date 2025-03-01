@@ -11,8 +11,9 @@ class Personas():
 
 
 persona =Personas()
-persona.edad =   42
-persona.estatura = 193
+persona.edad =   45
+persona.estatura = 155.0
+persona.peso = 75
 print("nombre: ",persona.nombre," edad: ",persona.edad, " cms: ", persona.estatura)
 print("nombre: ",persona.nombre," edad: ",persona.edad, " cms: ", persona.estatura)       
         
